@@ -11,7 +11,7 @@ const app = Vue.createApp({
 
   methods: {
     async getUser() {
-      const res = await fetch("https:randomuser.me/api");
+      const res = await fetch("https:randomuser.me/api", {referrerPolicy: "no-referrer"});
       const {results} = await res.json();
       
       this.firstName = results[0].name.first,
